@@ -10,7 +10,15 @@ function App() {
   const [query, setQuery] = useState('');
   const [weather, setWeather] = useState({});
 
-  const search = evt => {       // ak stlacime event - enter, fetchne nam databazu
+
+
+
+
+
+
+
+  
+  const search = evt => {       
     if (evt.key === "Enter") {
       fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
         .then(res => res.json())
@@ -37,7 +45,7 @@ function App() {
 
   return (
     <div className={(typeof weather.main != "undefined") // if weather main is not undefined then throw 'app'
-                    ? ((weather.main.temp > 16)         // if weather main is undefined then throw func kde je pocasie teplejsie ako 16 ? app warm : v opacnom pripade 'app'
+                    ? ((weather.main.temp > 16)          // if weather main is undefined then throw func kde je pocasie teplejsie ako 16 ? app warm : v opacnom pripade 'app'
                         ? 'app warm' 
                         : 'app') 
                     : 'app'}>
